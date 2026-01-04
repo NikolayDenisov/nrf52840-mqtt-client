@@ -1,4 +1,9 @@
 import asyncio
+
+from dotenv import load_dotenv
+
+load_dotenv()
+
 from src.mqtt.client import start_mqtt
 from src.mqtt.consumer import consume
 

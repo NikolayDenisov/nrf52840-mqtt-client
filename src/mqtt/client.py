@@ -1,11 +1,7 @@
 import json
 import asyncio
 import paho.mqtt.client as mqtt
-import os
-
-MQTT_BROKER = os.getenv("MQTT_BROKER")
-MQTT_PORT = os.getenv("MQTT_PORT")
-MQTT_TOPIC = os.getenv("MQTT_TOPIC")
+from src.config import MQTT_BROKER, MQTT_PORT, MQTT_TOPIC
 
 
 def start_mqtt(loop: asyncio.AbstractEventLoop, queue: asyncio.Queue):
