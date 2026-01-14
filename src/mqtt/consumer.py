@@ -6,6 +6,10 @@ async def consume(queue):
     async with AsyncSessionLocal() as session:
         while True:
             data = await queue.get()
+            if not isinstance(data, dict):
+                continue
+            if "ts" not in data:
+                continue
 
             obj = SensorData(
                 device_id=data["device_id"],
